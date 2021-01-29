@@ -25,4 +25,6 @@ public class Person {
     private String name;
 
     private Gender gender;
+
+    private Integer age;
 }

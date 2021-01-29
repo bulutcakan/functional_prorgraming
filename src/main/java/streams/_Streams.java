@@ -19,19 +19,17 @@ import java.util.stream.Stream;
  * Year:2021
  */
 public class _Streams {
+    static List<Person> people = Stream.of(
+            new Person("John", Gender.MALE, 25),
+            new Person("Mari", Gender.FEMALE, 22),
+            new Person("Aisha", Gender.FEMALE, 23),
+            new Person("Alex", Gender.MALE, 12),
+            new Person("Alix", Gender.FEMALE, 34),
+            new Person("BOB", Gender.GAY, 77)
+
+    ).collect(Collectors.toList());
 
     public static void main(String[] args) {
-        List<Person> people = Stream.of(
-                new Person("John", Gender.MALE),
-                new Person("Mari", Gender.FEMALE),
-                new Person("Aisha", Gender.FEMALE),
-                new Person("Alex", Gender.MALE),
-                new Person("Alix", Gender.FEMALE),
-                new Person("BOB", Gender.GAY)
-
-        ).collect(Collectors.toList());
-
-
         people.stream().map(person -> person.getGender()).collect(Collectors.toList()).
                 forEach(System.out::println);
 
